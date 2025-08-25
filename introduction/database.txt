@@ -1,0 +1,32 @@
+📘 Database
+
+Definition:
+A database is an organized collection of data that can be easily accessed, managed, and updated.
+
+Key Points:
+    Stores related data in a structured way.
+    Ensures consistency, security, and integrity of data.
+    Allows multiple users to access and manipulate data simultaneously.
+
+Example:
+    A university database may store:
+        Students (roll_no, name, dept)
+        Courses (course_id, title, credits)
+        Enrollments (student_id, course_id, grade)
+
+
+Types of Databases:
+
+    Relational Database (RDBMS) – Uses tables (rows & columns). Example: MySQL, PostgreSQL, Oracle.
+
+    NoSQL Database – Non-relational, flexible schema. Example: MongoDB, Cassandra, Redis.
+
+    Distributed Database – Spread across multiple machines. Example: Google Spanner.
+
+
+Why Use a Database (instead of files)?
+
+    Avoids data redundancy.
+    Provides fast querying with indexes.
+    Ensures data security & backup.
+    Supports transactions (ACID properties).
