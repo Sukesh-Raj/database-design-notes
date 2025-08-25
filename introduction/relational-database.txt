@@ -1,0 +1,36 @@
+
+🔹 Relational Database
+
+A relational database stores data in the form of relations (tables).
+Each table consists of rows (records) and columns (fields).
+Relationships are used to connect data across multiple tables.
+
+Example:
+    Student Table: (student_id, name, age)
+    Course Table: (course_id, title)
+    Enrollment Table: (student_id, course_id) → links students to courses.
+
+
+🔹 Entity
+
+An entity = a real-world object that we want to store data about.
+Represented as a table in a relational database.
+Each entity has instances (rows/records).
+
+Example:
+    Student is an entity.
+    Rows like (101, "Alice", 20), (102, "Bob", 21) are entity instances.
+
+
+🔹 Attributes
+
+Attributes = properties/characteristics of an entity.
+Represented as columns in a table.
+Each attribute has a domain (set of allowed values).
+
+Example:
+
+    For entity Student:
+        student_id (integer)
+        name (string)
+        age (integer, must be > 0)
