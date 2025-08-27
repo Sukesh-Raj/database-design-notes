@@ -1,0 +1,10 @@
+📘 Data Integrity
+
+🔹 Definition
+    Data Integrity = Ensuring accuracy, consistency, and reliability of data throughout its lifecycle.
+    Maintained using constraints, keys, and rules in a database.
+
+🔹 Why It Matters
+    Prevents invalid or duplicate entries.
+    Maintains trustworthiness of data.
+    Helps ensure consistency across tables.

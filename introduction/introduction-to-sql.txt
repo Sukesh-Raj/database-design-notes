@@ -1,0 +1,13 @@
+📘 Introduction to SQL
+
+
+🔹 What is SQL?
+    SQL (Structured Query Language) = Standard language to communicate with relational databases.
+    Used for storing, retrieving, and manipulating data.
+
+🔹 Key Points
+    SQL is case-insensitive (but convention uses uppercase for keywords).
+    ; marks the end of a statement.
+    Works with tables, rows, and columns (relational structure).
+
+--------------------------------------------------------------------------------------------------------

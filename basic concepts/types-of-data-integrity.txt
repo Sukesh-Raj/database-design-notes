@@ -1,0 +1,55 @@
+📘 Types of Data Integrity
+
+1. Entity Integrity
+    Ensures each row in a table is unique and identifiable.
+    Achieved by Primary Key (cannot be NULL).
+
+    ✅ Example:
+        CREATE TABLE Students (
+        student_id INT PRIMARY KEY,
+        name VARCHAR(50)
+        );
+    
+    student_id must be unique and not null → guarantees entity integrity.
+
+2.Referential Integrity
+    Ensures relationships between tables are valid.
+    Achieved by Foreign Key constraints.
+
+    ✅ Example:
+        CREATE TABLE Courses (
+        course_id INT PRIMARY KEY,
+        title VARCHAR(50)
+        );
+
+        CREATE TABLE Enrollments (
+        enrollment_id INT PRIMARY KEY,
+        student_id INT,
+        course_id INT,
+        FOREIGN KEY (course_id) REFERENCES Courses(course_id)
+        );
+
+    A row in Enrollments cannot reference a course_id that doesn’t exist in Courses.
+
+3. Domain Integrity
+    Ensures values are from the valid set/range (domain).
+    Achieved by data types, CHECK, DEFAULT, NOT NULL.
+
+    ✅ Example:
+        CREATE TABLE Employees (
+        emp_id INT PRIMARY KEY,
+        age INT CHECK (age >= 18),
+        dept VARCHAR(20) DEFAULT 'General'
+        );
+    
+    age must be ≥ 18.
+    dept defaults to "General" if not provided.
+
+👉 So in summary:
+    Entity Integrity → Primary Key
+    Referential Integrity → Foreign Key
+    Domain Integrity → Data Types + Constraints
+
+
+
+

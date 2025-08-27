@@ -1,0 +1,33 @@
+📘 Atomic Values
+
+🔹 Definition
+    An atomic value = a value that is indivisible (cannot be broken down into smaller meaningful parts).
+    In relational databases, each cell in a table must store only one atomic value → this is the rule of First Normal Form (1NF).
+
+🔹 Example
+
+❌ Non-atomic values (violates 1NF)
+
+Student Table
++------------+------------------+
+| student_id | phone_numbers    |
++------------+------------------+
+| 1          | 9876543210,9123  |
+
+phone_numbers stores multiple values in one column → not atomic.
+
+✅ Atomic values (follows 1NF)
+
+Student Table
++------------+--------------+
+| student_id | phone_number |
++------------+--------------+
+| 1          | 9876543210   |
+| 1          | 9123         |
+
+Each cell has a single value.
+
+🔹 Why Atomic Values Matter
+    Avoids confusion when querying.
+    Ensures data consistency.
+    Allows applying constraints, indexing, and searching efficiently.

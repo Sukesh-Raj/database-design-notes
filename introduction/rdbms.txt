@@ -1,0 +1,31 @@
+📘 RDBMS (Relational Database Management System)
+
+🔹 Definition
+    RDBMS = Software that manages relational databases.
+    Stores data in tables (relations) consisting of rows (tuples) and columns (attributes).
+    Uses SQL (Structured Query Language) to interact with the database.
+
+🔹 Features of RDBMS
+    Data stored in tables (rows & columns).
+    Relationships maintained using keys (Primary Key, Foreign Key).
+    Normalization to remove redundancy.
+    ACID properties for transactions:
+        Atomicity – all or nothing
+        Consistency – valid state maintained
+        Isolation – transactions don’t interfere
+        Durability – changes persist after commit
+    Security via user roles and permissions.
+
+🔹 Examples of RDBMS
+    MySQL
+    PostgreSQL
+    Oracle Database
+    Microsoft SQL Server
+
+| **Database**                   | **RDBMS**                          |
+| ------------------------------ | ---------------------------------- |
+| Just a collection of data      | Software to manage relational data |
+| Can be structured/unstructured | Always structured in tables        |
+| Example: CSV file              | Example: MySQL, PostgreSQL         |
+
+--------------------------------------------------------------------------------------------------
