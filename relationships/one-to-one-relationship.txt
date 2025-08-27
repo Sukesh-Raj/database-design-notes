@@ -1,0 +1,32 @@
+📘 One-to-One (1:1) Relationship
+
+🔹 Definition
+    A One-to-One relationship means:
+    Each row in Table A is linked to at most one row in Table B.
+    And vice versa.
+
+🔹 When to Use
+    To split data into multiple tables when:
+        Some attributes are optional.
+        Some data is sensitive/secure and stored separately.
+        To reduce table size for performance.
+
+🔹 Example
+
+👤 Each Citizen has one Passport, and each Passport belongs to only one Citizen.
+
+CREATE TABLE Citizen (
+    citizen_id INT PRIMARY KEY,
+    name VARCHAR(50)
+);
+
+CREATE TABLE Passport (
+    passport_id INT PRIMARY KEY,
+    citizen_id INT UNIQUE,
+    FOREIGN KEY (citizen_id) REFERENCES Citizen(citizen_id)
+);
+
+citizen_id in Passport is marked UNIQUE, ensuring one passport ↔ one citizen.
+
+🔹 Key Point
+    Always enforce UNIQUE constraint on the foreign key to maintain true 1:1 mapping.

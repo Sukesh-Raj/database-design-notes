@@ -1,0 +1,33 @@
+📘 One-to-Many (1:N) Relationship
+
+
+🔹 Definition
+    A One-to-Many relationship means:
+    A single row in Table A can be linked to many rows in Table B.
+    But each row in Table B is linked to only one row in Table A.
+
+
+🔹 When to Use
+    Most common relationship in databases.
+    Used when one entity has multiple dependent entities.
+
+🔹 Example
+🏢 One Department can have many Employees, but each Employee belongs to only one Department.
+
+CREATE TABLE Department (
+    dept_id INT PRIMARY KEY,
+    dept_name VARCHAR(50)
+);
+
+CREATE TABLE Employee (
+    emp_id INT PRIMARY KEY,
+    name VARCHAR(50),
+    dept_id INT,
+    FOREIGN KEY (dept_id) REFERENCES Department(dept_id)
+);
+
+dept_id in Employee is a Foreign Key → links employee to a department.
+One department may have many employees, but an employee belongs to only one department.
+
+🔹 Key Point
+    Implemented using a Foreign Key in the “many” side (Employee table here).

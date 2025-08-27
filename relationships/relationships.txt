@@ -1,0 +1,10 @@
+📘 Relationships in Databases
+
+🔹 Definition
+    A relationship shows how two entities (tables) are connected to each other in a relational database.
+    Relationships are established using Primary Keys (PK) and Foreign Keys (FK).
+
+🔹 Why Relationships are Important
+    Avoids data duplication.
+    Maintains data integrity.
+    Makes queries more meaningful (via joins).
