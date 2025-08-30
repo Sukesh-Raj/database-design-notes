@@ -1,0 +1,87 @@
+🔑 Types of Keys
+
+1.Primary Key
+
+    Uniquely identifies each row in a table.
+    Cannot be NULL.
+    Only one primary key per table.
+
+2.Candidate Key
+
+    A set of attributes that can qualify as a primary key.
+    Every table can have multiple candidate keys, but only one is chosen as the primary key.
+
+    ✅ Example: In Student(roll_no, email, phone):
+        roll_no, email, phone → all are candidate keys.
+
+    We might pick roll_no as the primary key.
+
+3.Super Key
+
+    A set of attributes that uniquely identify rows, but may contain extra unnecessary attributes.
+    All candidate keys are super keys, but not all super keys are candidate keys.
+
+    ✅ Example: In Employee(emp_id, email, phone):
+        {emp_id} → Candidate key (also super key).
+        {emp_id, email} → Super key (but not candidate).
+
+4.Foreign Key
+
+    An attribute in one table that refers to the primary key in another table.
+    Used to establish relationships.
+
+    ✅ Example:
+        CREATE TABLE Department (
+        dept_id INT PRIMARY KEY,
+        dept_name VARCHAR(50)
+        );
+
+        CREATE TABLE Employee (
+        emp_id INT PRIMARY KEY,
+        name VARCHAR(50),
+        dept_id INT,
+        FOREIGN KEY (dept_id) REFERENCES Department(dept_id)
+        );
+
+5.Composite Key
+
+    A key made up of two or more attributes that together uniquely identify a row.
+
+    ✅ Example:
+        CREATE TABLE Enrollment (
+        student_id INT,
+        course_id INT,
+        PRIMARY KEY (student_id, course_id)
+        );
+    
+    Here, neither student_id nor course_id alone is unique, but together they form a composite key.
+
+6.Alternate Key
+
+    A candidate key that is not chosen as the primary key.
+
+    ✅ Example: In Student(roll_no, email, phone)
+    roll_no = Primary key.
+    email and phone = Alternate keys.
+
+7.Unique Key
+
+    Similar to primary key but:
+        Allows NULL values (one per column).
+        Can have multiple unique keys in a table.
+
+| Key Type      | Uniqueness   | NULL Allowed | Count per Table | Example                   |
+| ------------- | ----------   | ------------ | --------------- | ------------------------- |
+| Primary Key   | ✅ Yes      | ❌ No         | Only 1          | `emp_id`                  |
+| Candidate Key | ✅ Yes      | ❌ No         | Many possible   | `email`, `phone`          |
+| Super Key     | ✅ Yes      | ✅ Yes        | Many            | `{emp_id, email}`         |
+| Foreign Key   | ❌ No       | ✅ Yes        | Many            | `dept_id`                 |
+| Composite Key | ✅ Yes      | ❌ No         | Many            | `(student_id, course_id)` |
+| Alternate Key | ✅ Yes      | ❌ No         | Many            | `phone`                   |
+| Unique Key    | ✅ Yes      | ✅ One NULL   | Many            | `email`                   |
+
+-----------------------------------------------------------------------------------------------------------
+
+
+
+

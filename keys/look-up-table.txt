@@ -1,0 +1,48 @@
+📘 Lookup Table
+
+🔹 Definition
+
+    A Lookup Table is a small reference table used to store a fixed set of values.
+    Purpose: Avoid repeating the same values in multiple rows and ensure consistency.
+
+🔹 Why Use Lookup Tables?
+
+    Data Consistency – prevents typos (e.g., "HR", "hr", "Hr").
+    Easy Maintenance – change once in lookup table → reflects everywhere.
+    Smaller Storage – instead of storing text repeatedly, store an ID.
+    Better Performance – joins with integer IDs are faster.
+
+🔹 Example
+
+    Suppose you want to store Employee Department.
+    Instead of writing "HR", "Finance", "IT" repeatedly in Employee table → use a Lookup Table.
+
+    -- Lookup Table
+    CREATE TABLE Department (
+    dept_id INT PRIMARY KEY,
+    dept_name VARCHAR(50)
+    );
+
+    -- Employee Table
+    CREATE TABLE Employee (
+    emp_id INT PRIMARY KEY,
+    name VARCHAR(50),
+    dept_id INT,
+    FOREIGN KEY (dept_id) REFERENCES Department(dept_id)
+    );
+
+Department = Lookup table.
+Employee.dept_id points to Department.dept_id.
+If you change "IT" to "Information Technology" in Department, it’s updated for all employees.
+
+🔹Real-World Examples of Lookup Tables
+
+    Country Codes 🌍 (IN = India, US = United States, etc.)
+    Order Status 🛒 (Pending, Shipped, Delivered, Cancelled)
+    User Roles 👤 (Admin, Editor, Viewer)
+
+🔹Key Point
+
+    Lookup tables usually contain two columns:
+        An ID (Primary Key)
+        A Descriptive Value (name, type, status, etc.)

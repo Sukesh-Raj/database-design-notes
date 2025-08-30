@@ -1,0 +1,64 @@
+📘 Natural Key vs Surrogate Key
+
+🔹 1. Natural Key
+    A natural key is a key that comes from the real-world data itself.
+    It has a business meaning.
+    Already exists in the dataset.
+
+    ✅ Examples:
+        email in a Users table → naturally unique.
+        SSN (Social Security Number) for a person.
+        ISBN for books.
+
+    Pros:
+        No extra column needed.
+        Easy to understand because it has meaning.
+
+    Cons:
+        Can change (emails, phone numbers may change).
+        May be large (like long strings).
+        Not always guaranteed unique across time.
+
+🔹 2. Surrogate Key
+    A surrogate key is an artificial key, usually an auto-increment number or UUID.
+    Has no business meaning, only used to uniquely identify rows.
+
+    ✅ Examples:
+        user_id (auto-increment integer) in a Users table.
+        order_id in an Orders table.
+
+    Pros:
+        Simple and compact (usually integer).
+        Never changes.
+        Better for joins (faster).
+
+    Cons:
+        Doesn’t carry meaning (you must look up the data for details).
+        Adds an extra column to the table.
+
+🔹 Example Table
+
+-- Using Natural Key
+CREATE TABLE Users_Natural (
+    email VARCHAR(100) PRIMARY KEY,
+    name VARCHAR(50)
+);
+
+-- Using Surrogate Key
+CREATE TABLE Users_Surrogate (
+    user_id INT PRIMARY KEY AUTO_INCREMENT,
+    email VARCHAR(100) UNIQUE,
+    name VARCHAR(50)
+);
+
+In Users_Natural, email is the primary key.
+In Users_Surrogate, a separate user_id is created, and email is just unique.
+
+🔹 When to Use
+
+Use Natural Key:
+    If the attribute is guaranteed unique and stable (like ISBN).
+
+Use Surrogate Key:
+    If natural key can change, is large, or not always unique.
+    Best for lookup tables and large systems.

@@ -1,0 +1,47 @@
+📘 NOT NULL on Foreign Keys
+
+🔹 What It Means
+    A foreign key references a primary key in another table.
+    By default, a foreign key can be NULL (meaning “no relation”).
+    If you add NOT NULL to the foreign key → it becomes mandatory: every record must have a valid reference in the parent table.
+
+🔹 Example
+
+Case 1: Foreign Key without NOT NULL
+
+CREATE TABLE Department (
+    dept_id INT PRIMARY KEY,
+    dept_name VARCHAR(50) NOT NULL
+);
+
+CREATE TABLE Employee (
+    emp_id INT PRIMARY KEY,
+    name VARCHAR(50) NOT NULL,
+    dept_id INT,
+    FOREIGN KEY (dept_id) REFERENCES Department(dept_id)
+);
+
+Here, dept_id in Employee can be NULL → means employee has no department.
+
+Case 2: Foreign Key with NOT NULL
+
+CREATE TABLE Employee (
+    emp_id INT PRIMARY KEY,
+    name VARCHAR(50) NOT NULL,
+    dept_id INT NOT NULL,
+    FOREIGN KEY (dept_id) REFERENCES Department(dept_id)
+);
+
+Here, dept_id is NOT NULL → every employee must belong to a department.
+
+🔹 When to Use NOT NULL on Foreign Keys?
+
+    Use NOT NULL if the relationship is mandatory.
+        Example: Every Order must belong to a Customer.
+
+    Allow NULL if the relationship is optional.
+        Example: An Employee may or may not belong to a Department.
+
+⚖️ Rule of Thumb:
+    NOT NULL foreign key → mandatory relationship.
+    Nullable foreign key → optional relationship.

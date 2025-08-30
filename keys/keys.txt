@@ -1,0 +1,7 @@
+📘 Keys in DBMS
+
+🔹 What is a Key?
+    A Key is a set of one or more attributes (columns) that help:
+        Uniquely identify a row in a table.
+        Establish relationships between tables.
+        Enforce data integrity.
