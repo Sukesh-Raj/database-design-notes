@@ -1,0 +1,44 @@
+📘 First Normal Form (1NF)
+
+🔹 Definition
+
+    1NF = A table is in First Normal Form if:
+        All columns contain atomic values (indivisible).
+        No repeating groups or arrays.
+        Each row is unique (usually enforced by a primary key).
+
+🔹 Why 1NF?
+
+    To eliminate duplicate or multi-valued fields.
+    Makes querying and indexing easier.
+
+🔹 Example
+
+❌ Not in 1NF (Subjects column has multiple values)
+
+Student Table
++----+-------+------------------+
+| ID | Name  | Subjects         |
++----+-------+------------------+
+| 1  | Raj   | Math, Science    |
+| 2  | Priya | English, History |
+
+✅ In 1NF (Each value atomic, one subject per row)
+
+Student Table
++----+-------+---------+
+| ID | Name  | Subject |
++----+-------+---------+
+| 1  | Raj   | Math    |
+| 1  | Raj   | Science |
+| 2  | Priya | English |
+| 2  | Priya | History |
+
+🔹 Key Points
+
+    Atomic values → Each cell contains only one value.
+    Unique rows → Each record must be uniquely identifiable.
+    No repeating groups → Do not store multiple items in a single column.
+
+⚡ Shortcut:
+    1NF = Atomic + Unique rows + No repeating groups

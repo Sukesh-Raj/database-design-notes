@@ -1,0 +1,13 @@
+📘 Database Normalization
+
+🔹 Definition
+
+    Normalization = Process of organizing data in a database to reduce redundancy and improve data integrity.
+    Achieved by dividing large tables into smaller related tables.
+
+🔹 Objectives of Normalization
+
+    Remove data redundancy (duplicate data).
+    Ensure data integrity.
+    Simplify maintenance (insert, update, delete).
+    Improve query efficiency.
